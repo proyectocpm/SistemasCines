@@ -1,0 +1,65 @@
+
+<!-- 
+<div *ngIf="peliculas && peliculas.length > 0">
+    <div *ngFor ="let pelicula of peliculas;let index=index" class="pelicula-content">
+
+<div>
+    Película{{index}}:{{pelicula.titulo}}
+
+    <button style="border: 23px;margin-left: 1rem; color: red;"(click)="Funcioneliminar()">Eliminc ar</button>
+
+</div>
+<div>
+    {{pelicula.fechalanzamiento | date:"dd-MMMM-yyyy"| uppercase}}
+</div>
+    {{pelicula.precio| currency}}
+    </div>
+
+</div> -->
+<app-listado-generico [listado]="peliculas">
+  <!--  
+       <ng-container vacio>
+<div>
+    Mensaje <b>Vacio</b>
+</div>
+
+    </ng-container>
+    <div class="pelicula-content">
+<div *ngFor ="let pelicula of peliculas;let index=index" class="pelicula-content">
+<div>
+    
+    Película{{index}}:{{pelicula.titulo}}
+
+    <button style="border: 23px;margin-left: 1rem; color: red;"(click)="Funcioneliminar()">Eliminar</button>
+
+</div>
+<div>
+    {{pelicula.fechalanzamiento | date:"dd-MMMM-yyyy"| uppercase}}
+
+</div>
+    {{pelicula.precio| currency}}
+
+</div>
+</div>
+
+  --> 
+    <ng-container contenido>
+        <div class="peliculas-content">
+<div *ngFor ="let pelicula of peliculas;let index=index" class="pelicula-content">
+<a>
+    <img [src]="pelicula.poster" alt="poster">
+</a>
+<p>
+    <a>{{pelicula.titulo}}</a>
+</p>
+<div>
+    <a mat-flat-button color="primary">Editar </a>
+    <button mat-flat-button color="warn" type="button">
+Borrar 
+    </button>
+</div>
+</div>
+</div>
+</ng-container>
+</app-listado-generico>
+

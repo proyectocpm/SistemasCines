@@ -1,0 +1,13 @@
+<mat-tab-group>
+    <mat-tab label="Editar">
+<mat-form-field appareance ="fill">
+    <mat-label>Bibliografia</mat-label>
+    <textarea (input)="inputTexArea($event.target.value)"matInput>
+
+    </textarea>
+</mat-form-field>
+    </mat-tab>
+    <mat-tab label="Observar">
+<markdown [data]="contenidoMarkdown" ngPreserveWhitespaces></markdown>
+    </mat-tab>
+</mat-tab-group>
